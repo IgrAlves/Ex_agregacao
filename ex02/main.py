@@ -1,0 +1,32 @@
+from pedido import Pedido
+from itempedido import ItemPedido
+from produto import Produto
+
+farinha = Produto(2661, 5.00, "Farinha")
+leite  = Produto(1322, 12.00, "Leite")
+acucar = Produto(5104, 3.50, "Açúcar")
+sal = Produto(9871, 3.00, "Sal")
+feijao = Produto(4416, 5.00, "Feijão")
+arroz = Produto(3978, 4.00, "Arroz")
+
+pedido1 = Pedido()
+item = ItemPedido(farinha,3)
+pedido1.adicionar_item(item)
+item = ItemPedido(leite,2)
+pedido1.adicionar_item(item)
+print("      Valores dos pedidos")
+print("----------------------------------")
+print("Valor do primeiro pedido: R$", pedido1.obter_total())
+pedido2 = Pedido()
+item = ItemPedido(acucar,3)
+pedido2.adicionar_item(item)
+item = ItemPedido(sal, 4)
+pedido2.adicionar_item(item)
+item = ItemPedido(feijao, 1)
+pedido2.adicionar_item(item)
+print("Valor do segundo pedido: R$", pedido2.obter_total())
+pedido3 = Pedido()
+item = ItemPedido(arroz, 3)
+pedido3.adicionar_item(item)
+print("Valor do terceiro pedido: R$", pedido3.obter_total())
+print("----------------------------------")
